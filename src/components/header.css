@@ -1,0 +1,12 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    margin-bottom: 2rem;
+}
+
+.add_or_search {
+    display: flex;
+    gap: 1rem;
+}

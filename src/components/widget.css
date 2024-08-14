@@ -1,0 +1,42 @@
+.widget {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    height: 150px;
+    border-radius: 5px;
+    padding: 1rem;
+    position: relative;
+}
+
+.widget.add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.widget h2 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+}
+
+.widget p {
+    font-size: 0.8rem;
+    color: #333;
+    line-height: 1.5;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+.widget .remove {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 1rem;
+    color: red;
+    cursor: pointer;
+}

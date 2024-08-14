@@ -1,0 +1,46 @@
+.widget_list .category_title {
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.widget_list .category_title .remove {
+    cursor: pointer;
+    font-size: 1rem;
+    color: red;
+    margin-left: 0.5rem;
+    display: none;
+}
+
+.widget_list .category_title:hover .remove {
+    display: inline;
+}
+
+.widget_list .category_list {
+    list-style: none;
+    padding: 0;
+    margin-left: 2rem;
+}
+
+.widget_list .category_item {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    display: flex;
+    gap: 0.5rem;
+}
+
+.widget_list .category_item .remove {
+    cursor: pointer;
+    font-size: 1rem;
+    color: red;
+    margin-left: 0.5rem;
+    display: none;
+}
+
+.widget_list .category_item:hover .remove {
+    display: inline;
+}
