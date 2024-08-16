@@ -1,31 +1,46 @@
 import React from 'react'
 import './widget.css'
 import AddWidget from './AddWidget'
+import { MdDeleteForever } from 'react-icons/md'
 import { removeWidget, useDashboard } from '../Store'
 
 const Widget = ({ name, description, type, id, category }) => {
-    const [modalIsOpen, setModalIsOpen] = React.useState(false)
-    const { dispatch } = useDashboard()
+	const [modalIsOpen, setModalIsOpen] = React.useState(false)
+	const { dispatch } = useDashboard()
 
-    const handleRemove = () => {
-        dispatch(removeWidget(category, id))
-    }
+	const handleRemove = () => {
+		dispatch(removeWidget(category, id))
+	}
 
 	if (type === 'add') {
 		return (
 			<>
 				<div className={`widget ${type}`}>
-					<button onClick={() => {setModalIsOpen(true)}}>+ Add Widget</button>
-                </div>
-                
-                <AddWidget category={category} modalIsOpen={modalIsOpen} closeModal={() => {setModalIsOpen(false)}}  />
+					<button
+						onClick={() => {
+							setModalIsOpen(true)
+						}}
+					>
+						+ Add Widget
+					</button>
+				</div>
+
+				<AddWidget
+					category={category}
+					modalIsOpen={modalIsOpen}
+					closeModal={() => {
+						setModalIsOpen(false)
+					}}
+				/>
 			</>
 		)
 	}
 
 	return (
-        <div className='widget'>
-            <span className='remove' onClick={handleRemove}>x</span>
+		<div className='widget'>
+			<span className='remove' onClick={handleRemove}>
+				<MdDeleteForever size={24} />
+			</span>
 			<h2>{name}</h2>
 			<p>{description}</p>
 		</div>

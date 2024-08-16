@@ -3,6 +3,7 @@ import Modal from 'react-modal'
 import './sidebar.css'
 import WidgetList from './WidgetList'
 import AddCategory from './addCategory'
+import { MdClose } from 'react-icons/md'
 
 Modal.setAppElement('#sidebarModal')
 
@@ -35,7 +36,7 @@ const Sidebar = ({ isOpen, closeModal }) => {
 		>
 			<div className='sidebar'>
 				<div className='close' onClick={closeModal}>
-					x
+					<MdClose size={32} />
 				</div>
 
 				<div className='add_or_search'>

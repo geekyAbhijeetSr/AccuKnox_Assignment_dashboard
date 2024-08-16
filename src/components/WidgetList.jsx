@@ -1,5 +1,6 @@
 import React from 'react'
 import { removeCategory, removeWidget, useDashboard } from '../Store'
+import { MdDeleteForever } from 'react-icons/md'
 import './widgetList.css'
 
 const WidgetList = ({searchQuery}) => {
@@ -13,7 +14,7 @@ const WidgetList = ({searchQuery}) => {
 		<div className='widget_list'>
 			{Object.keys(state).map(category => (
 				<details key={category} open>
-					<summary className='category_title'>{category} <span className='remove' onClick={() => dispatch(removeCategory(category))}>x</span></summary>
+					<summary className='category_title'>{category} <span className='remove' onClick={() => dispatch(removeCategory(category))}><MdDeleteForever /></span></summary>
 					<ul className='category_list'>
 						{state[category].filter(widget => {
 							return widget.name.toLowerCase().includes(searchQuery.toLowerCase());
@@ -26,7 +27,7 @@ const WidgetList = ({searchQuery}) => {
 									checked={widget.active}
 									onChange={() => toggleWidget(category, widget.id)}
 								/>
-								{widget.name} <span className='remove' onClick={() => dispatch(removeWidget(category, widget.id))}>x</span>
+								{widget.name} <span className='remove' onClick={() => dispatch(removeWidget(category, widget.id))}><MdDeleteForever /></span>
 							</li>
 						))}
 					</ul>
